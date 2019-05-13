@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery - Reprograma- senha</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <p>digite sua senha:</p>
+
+    <input type="password" name="senha" id="senha" class="erro" />
+
+    <br>
+    <br>
+
+    <div id="forca">Força: </div>
+
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+    <script>
+
+        // keyup - assisti o evento 
+        $(document).ready(function () {
+            $("#senha").keyup(function () {
+                // usa-se .val pq é um input
+                var senha = $(this).val();
+                var forca = 0;
+
+                if (senha.length > 4) {
+                    forca += 25;
+
+                }
+
+                var regNumerico = new RegExp(/[0-9]/i);
+                if (regNumerico.test(senha)) {
+                    forca += 25;
+                }
+
+                var regCaracter = new RegExp(/[a-z]/i);
+                if (regCaracter.test(senha)) {
+                    forca += 25;
+                    // $(this).css("background-color", "#FF0000");
+                    // $(this).addClass("fundoVerde");
+                }
+
+                var regCaracterEspecial = new RegExp(/[^a-z0-9]/i);
+                if (regCaracterEspecial.test(senha)) {
+                    forca += 25;
+                    // $(this).css("background-color", "#00a458");
+
+
+
+                }
+
+                var aceito = "Não"
+                if(forca >= 75){
+                 aceito = "sim";
+                 $(this).removeClass ('erro');
+                 $(this).addClass ('sucesso');
+
+                } else{
+                    $(this).removeClass ('sucesso');
+                    $(this).addClass ('erro');
+
+                }
+
+
+                $("#forca").html(`forca:${forca} - senha:${senha} - aceito:${aceito}`);
+            })
+        });
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- outra forma de fazer mudar de cor 
+ -->
+<!-- aceito = (força >= 75);
+$(this).toggleClass ('sucesso''aceito');
+$(this).toggleClass ('erro''aceito'); -->
