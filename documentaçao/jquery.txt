@@ -1,0 +1,6 @@
+vhttps://github.com/reprograma/T7-jquery
+
+
+https://api.jquery.com/category/events/keyboard-events/
+
+https://api.jquery.com/category/events/mouse-events/

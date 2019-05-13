@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+    <script> 
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#painel").slideToggle("slow");
+               
+            });
+        });
+    </script>
+
+    <style>
+
+        #flip {
+            color: #FF0000;
+            font-size: 30px;
+        }
+
+        #painel,
+        #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: #f6f6f6;
+            border: solid 1px #f6f6f6;
+        }
+
+        #painel {
+            padding: 70px;
+            display: none;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="flip">Clique para aparecer o painel.</div>
+    <div id="painel">Eu amo chocolate!!!</div>
+
+</body>
+
+</html>

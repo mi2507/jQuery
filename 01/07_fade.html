@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+               $("#div1").fadeToggle("slow");
+               $("#div2").fadeToggle("slow");
+               $('#div3').fadeToggle("2000");
+               $("#div4").fadeToggle("slow");
+               $("#div5").fadeToggle("3000");
+               $("#div6").fadeToggle("slow");
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p>FadeIn.</p>
+
+    <button>Clique</button>
+    <br>
+    <br>
+
+    <div id="div1" style="width:80px;height:80px;background-color:red;"></div>
+    <br>
+    <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div>
+    <br>
+    <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+    <br>
+    <div id="div4" style="width:80px;height:80px;display:none;background-color:purple;"></div>
+    <br>
+
+    <!-- se tirar o display none o preto aparece sozinho e quando puxar os demais ele some  -->
+    <div id="div5" style="width:80px;height:80px;background-color:black;"></div>
+    <br>
+    <div id="div6" style="width:80px;height:80px;display:none;background-color:yellow;"></div>
+
+
+
+
+</body>
+
+</html>
